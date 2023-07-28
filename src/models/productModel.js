@@ -1,17 +1,16 @@
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
+  category: {
+    type: String,
+    required: [true, 'La categoria del producto es obligatorio'],
+  },
   name: {
     type: String,
     required: [true, 'El nombre del producto es obligatorio'],
   },
-  model: {
+  description: {
     type: String,
-    required: [true, 'El modelo del producto es obligatorio'],
-  },
-  category: {
-    type: String,
-    required: [true, 'La categoría del producto es obligatoria'],
   },
   currency: {
     type: String,
@@ -34,12 +33,17 @@ const productSchema = new mongoose.Schema({
     default: false,
   },
   image: {
-    type: String,
+    type: Array,
+    default: [],
     required: [true, 'La imagen del producto es obligatoria'],
   },
-  description: {
-    type: String,
-    required: [true, 'La descripción del producto es obligatoria'],
+  rating: {
+    type: Number,
+    default: 0,
+  },
+  reviews: {
+    type: Array,
+    default: []
   },
 });
 
