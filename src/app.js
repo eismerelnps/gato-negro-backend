@@ -5,6 +5,8 @@ const { dbConnect } = require("./database/config");
 
 const productRouter = require("./routes/productRoutes");
 const userRouter = require("./routes/userRoutes");
+const appRouter = require("./routes/appRoutes");
+
 
 // Configuración del servidor Express
 const app = express();
@@ -18,6 +20,8 @@ app.use("/api/v1/users", userRouter);
 
 // Rutas protegidas que requieren autenticación
 app.use("/api/v1/products", productRouter);
+// Rutas protegidas que requieren autenticación
+app.use("/api/v1/app", appRouter);
 
 // Middleware de error para manejar accesos no autorizados
 app.use((err, req, res, next) => {

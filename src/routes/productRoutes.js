@@ -33,7 +33,8 @@ router.put(
 // Ruta para eliminar un producto por su ID
 router.delete(
   "/:id",
-  middleware.checkPermissions(["delete"]),
+  // middleware.authenticate,
+  // middleware.checkPermissions(["delete"]),
   productController.deleteProductById
 );
 

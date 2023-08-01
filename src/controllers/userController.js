@@ -24,6 +24,8 @@ exports.createUser = async (req, res) => {
     //Generar el hash de la contraseña
     const hashedPassword = await bcrypt.hash(password, 10);
 
+
+    
     // Crea una nueva instancia del modelo User con los datos del usuario
     //for kidsrus
     const newUser = new User({
