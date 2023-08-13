@@ -115,7 +115,7 @@ exports.login = async (req, res) => {
       const token = jwt.sign(
         { id: user._id, username: user.username, role: user.role },
         process.env.JWT_SECRET,
-        { expiresIn: "1h" }
+        { expiresIn: "7d" } // Set expiration to 7 days
       );
       return res.status(200).json({ token, user });
     }
@@ -124,7 +124,7 @@ exports.login = async (req, res) => {
     const token = jwt.sign(
       { id: user._id, username: user.username, role: user.role },
       process.env.JWT_SECRET,
-      { expiresIn: "1h" }
+      { expiresIn: "7d" } // Set expiration to 7 days
     );
 
     // Actualizar el estado de autenticación a true
@@ -137,3 +137,4 @@ exports.login = async (req, res) => {
     res.status(500).json({ message: "Error al autenticar el usuario", error });
   }
 };
+
