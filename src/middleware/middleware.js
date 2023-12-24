@@ -23,9 +23,6 @@ exports.authenticate = (req, res, next) => {
   
   // Middleware para verificar los permisos de un usuario
 exports.checkPermissions = (requiredPermissions) => {
-    
-   
-    
     return (req, res, next) => {
       const  {role}  = req.user;
   

@@ -1,11 +1,6 @@
-// controllers/productController.js
-
-// Importa el modelo de productos
 const Product = require("../models/productModel");
 //Importa el paquete express-validator
 const { validationResult } = require("express-validator");
-
-// const Product = require('../models/Product');
 
 // Controlador para obtener todos los productos
 exports.getAllProducts = async (req, res) => {
@@ -16,7 +11,6 @@ exports.getAllProducts = async (req, res) => {
     res.status(500).json({ message: "Error al obtener los productos", error });
   }
 };
-
 // Controlador para obtener un producto por su ID
 exports.getProductById = async (req, res) => {
   try {
@@ -29,21 +23,6 @@ exports.getProductById = async (req, res) => {
     res.status(500).json({ message: "Error al obtener el producto", error });
   }
 };
-
-// // Controlador para crear un nuevo producto
-// exports.createProduct = async (req, res) => {
-//   try {
-//     const newProduct = new Product(req.body);
-//     await newProduct.save();
-//     res.status(201).json({ message: 'Producto creado exitosamente', product: newProduct });
-//   } catch (error) {
-//     res.status(500).json({ message: 'Error al crear el producto', error });
-//   }
-// };
-
-// Importa el modelo de productos
-//const Product = require('../models/Product');
-
 exports.createProduct = async (req, res) => {
   try {
     // Verificar errores de validación
@@ -94,7 +73,6 @@ exports.createProduct = async (req, res) => {
     res.status(500).json({ message: "Error al crear el producto", error });
   }
 };
-
 // Controlador para actualizar un producto por su ID
 exports.updateProductById = async (req, res) => {
   try {
@@ -116,7 +94,6 @@ exports.updateProductById = async (req, res) => {
     res.status(500).json({ message: "Error al actualizar el producto", error });
   }
 };
-
 // Controlador para eliminar un producto por su ID
 exports.deleteProductById = async (req, res) => {
   try {
