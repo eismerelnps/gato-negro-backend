@@ -4,6 +4,7 @@
   "description": "kidsrus-backend-ecommerce-web",
   "main": "./src/app.js",
   "scripts": {
+    "dev": "node ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
